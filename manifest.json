@@ -10,6 +10,15 @@
       "js": [ "planimeter.js" ],
       "matches": [ "<all_urls>" ]
     }],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/planimeter-16.png",
+      "48": "icons/planimeter-48.png",
+      "128": "icons/planimeter-128.png",
+      "256": "icons/planimeter-256.png"
+    }
+  },
   "icons": {
     "16": "icons/planimeter-16.png",
     "48": "icons/planimeter-48.png",

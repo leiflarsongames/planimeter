@@ -18,8 +18,11 @@ const clickActions = [
 ]
 
 // runs this behavior
+initializePopup();
 bindActions(); // creates event listeners
 sayControls(); // writes the controls to the console.
+
+
 
 
 //////// behavior functions ////////
