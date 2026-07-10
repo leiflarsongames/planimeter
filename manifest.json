@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "planimeter",
+  "version": "1.0.0",
+  "author": "Leif K. Larson",
+  "description": "Allows for manual measurement of objects in browser.\nFilter for \"[planimeter]\" in the console to see controls.",
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "js": [ "planimeter.js" ],
+      "matches": [ "<all_urls>" ]
+    }],
+  "icons": {
+    "16": "icons/planimeter-16.png",
+    "48": "icons/planimeter-48.png",
+    "128": "icons/planimeter-128.png",
+    "256": "icons/planimeter-256.png"
+  }
+}
