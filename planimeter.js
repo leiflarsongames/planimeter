@@ -79,11 +79,32 @@ function readMeasurements()
     }
 
     console.log(`${prefix} DIMENSIONS = (${dims.x} x ${dims.y})\n\t= ${dims.x * dims.y}px total`);
-    alert(`${prefix} dimensions = (${dims.x} x ${dims.y})\n\t= ${dims.x * dims.y}px total`);
+    alert(`${prefix} dimensions = (${dims.x} x ${dims.y})\ntotal = ${_formatLargePixelCount(dims.x * dims.y)}`);
     _clearMeasurements();
 }
 
 //////// helper methods ////////
+
+/**
+ * Users should pick strictly positive numbers of sufficiently small scale.
+ *
+ * @param number in pixels.
+ * @param precision number of digits to maintain when rounding.
+ * @returns {string} Number as a string, with an appropriate unit prefix following it. e.g., "5.2 Kpx".
+ * @private
+ */
+function _formatLargePixelCount(number, precision = 3) {
+    if (typeof number !== "number") { throw new Error(`_formatLargePixelCount requires first parameter "number" be a number, NOT ${typeof number}.`); }
+    if (typeof precision !== "number") { throw new Error(`_formatLargePixelCount requires second parameter "precision" be a number, NOT ${typeof number}.`); }
+
+    const LARGE_NUMBER_PREFIXES = ["", "K", "M", "G", "T", "P"];
+
+    precision = Math.min(Math.floor(Math.log10(number))+1, precision); // shall not exceed actual digit count of integer input.
+
+    const idxPrefix = Math.floor(Math.log10(number) / 3);
+    const outNumber = Math.round(number/(10^(Math.floor(Math.log10(number))-precision)))/(10^precision);
+    return `${outNumber} ${LARGE_NUMBER_PREFIXES[idxPrefix]}px`;
+}
 
 function _clearMeasurements() { samples = []; }
 
