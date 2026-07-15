@@ -11,8 +11,11 @@ The extension should now work on any web page that does not overload the extensi
 
 ## Directions
 
+With the extension enabled:
 * Press **[m]** to enable/disable measurement (starts out OFF.)
-* With measurements enabled, **click** anywhere to add a point.
+* With measurements enabled, **[click]** anywhere to add a point.
 * Press **[b]** to read out the enclosing area of all points.
+
+All measurements are in CSS pixels.
  
 Tip: Filter for `[planimeter]` in the console to see only output from this extension.
