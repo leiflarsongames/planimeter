@@ -1,3 +1,7 @@
+## planimeter
+
+This tool is used to estimate the size of rectangular areas, and reads the result in CSS pixels, which are distinct from the pixels actually displayed to an end user.
+
 ## Installation
 
 ### Chrome
